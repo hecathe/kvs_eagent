@@ -1,12 +1,13 @@
 <template>
 	<div>
-		<h1 class="title-h1">О компании</h1>
+		<h1 class="title-h1">Элементы интерфейса</h1>
 
 		<UiButton :is-button="false">Кнопка</UiButton>
 
 		<ul class="list">
 			<li>dsfsdf</li>
 		</ul>
+
 	</div>
 </template>
 
