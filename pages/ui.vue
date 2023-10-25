@@ -11,9 +11,6 @@
 	</div>
 </template>
 
-<script>
-</script>
-
 <style lang="scss" scoped>
 .list {
 	@include reset-list;

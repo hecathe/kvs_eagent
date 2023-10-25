@@ -4,10 +4,10 @@ body {
 }
 
 .container {
-	max-width: 1440px;
+	max-width: 1170px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 20px;
+	padding: 0 16px;
 }
 
 .title-h1 {
@@ -20,4 +20,8 @@ body {
 	@include text(36px, 40px, 700);
 	margin: 0;
 	margin-bottom: 24px;
+}
+
+.text-orange {
+	color: $orange1;
 }

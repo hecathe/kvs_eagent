@@ -4,8 +4,14 @@
 	margin: 0;
 }
 
-@mixin text($font-size, $line-height, $font-weght) {
+@mixin text($font-size, $line-height, $font-weght: 400) {
 	font-size: $font-size;
 	line-height: $line-height;
 	font-weight: $font-weght;
+}
+
+@mixin df($align-items: initial, $gap: 0) {
+	display: flex;
+	align-items: $align-items;
+	gap: $gap;
 }
