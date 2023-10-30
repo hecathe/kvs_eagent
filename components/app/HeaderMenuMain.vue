@@ -1,6 +1,10 @@
 <template>
 	<ul class="header-menu-main">
-		<li class="header-menu-main__item" v-for="item in menu" :key="item.id">
+		<li
+			class="header-menu-main__item"
+			v-for="item in template.menu_main"
+			:key="item.id"
+		>
 			<NuxtLink class="header-menu-main__link" :to="item.link">
 				{{ item.label }}
 			</NuxtLink>
@@ -8,37 +12,16 @@
 	</ul>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			menu: [],
-		};
-	},
+<script setup>
+import { useTemplate } from '~/stores/template';
+import { storeToRefs } from 'pinia';
 
-	mounted() {
-		this.getTemplate();
-	},
+const store = useTemplate();
+const { fetchTemplate } = store;
+const { template } = storeToRefs(store);
 
-	methods: {
-		getTemplate() {
-			$fetch('http://localhost:3000/api/template')
-				.then((response) => {
-					this.menu = response.template.menu_main;
-					console.log(response);
-					console.log(this.menu);
-				});
-		}
-	},
-};
+fetchTemplate();
 </script>
-
-<!-- <script setup>
-const { data: response } = await useFetch('http://localhost:3000/api/template', {
-	method: 'get',
-});
-console.log(response);
-</script> -->
 
 <style lang="scss" scoped>
 .header-menu-main {

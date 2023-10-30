@@ -1,6 +1,6 @@
 <template>
 	<ul class="header-menu-top">
-		<li class="header-menu-top__item" v-for="item in menu" :key="item.id">
+		<li class="header-menu-top__item" v-for="item in template.menu_header" :key="item.id">
 			<a class="header-menu-top__link" href="#" v-if="item.icon">
 				<img :src="item.icon" :alt="item.label">
 			</a>
@@ -9,50 +9,15 @@
 	</ul>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			menu: [
-				{
-					icon: false,
-					label: 'База знаний',
-					link: '/objects/',
-				},
-				{
-					icon: false,
-					label: 'Акции',
-					link: '/promotions/',
-				},
-				{
-					icon: false,
-					label: 'Новости',
-					link: '/news/',
-				},
-				{
-					icon: false,
-					label: 'Избранное',
-					link: '/favorites/',
-				},
-				{
-					icon: false,
-					label: 'Контакты',
-					link: '/contacts/',
-				},
-				{
-					icon: '/icons/online-school-kvs.svg',
-					label: '',
-					link: '#',
-				},
-				{
-					icon: '/icons/telegram.svg',
-					label: '',
-					link: '#',
-				},
-			],
-		};
-	},
-};
+<script setup>
+import { useTemplate } from '~/stores/template';
+import { storeToRefs } from 'pinia';
+
+const store = useTemplate();
+const { fetchTemplate } = store;
+const { template } = storeToRefs(store);
+
+fetchTemplate();
 </script>
 
 <style lang="scss" scoped>

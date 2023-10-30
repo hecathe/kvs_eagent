@@ -29,6 +29,16 @@ export default defineEventHandler((event) => {
 					label: 'Контакты',
 					link: '/contacts/',
 				},
+				{
+					icon: '/icons/online-school-kvs.svg',
+					label: '',
+					link: '#',
+				},
+				{
+					icon: '/icons/telegram.svg',
+					label: '',
+					link: '#',
+				},
 			],
 			menu_main: [
 				{
