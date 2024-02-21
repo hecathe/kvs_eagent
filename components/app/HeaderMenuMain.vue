@@ -2,7 +2,7 @@
 	<ul class="header-menu-main">
 		<li
 			class="header-menu-main__item"
-			v-for="item in template.menu_main"
+			v-for="item in menuMain"
 			:key="item.id"
 		>
 			<NuxtLink class="header-menu-main__link" :to="item.link">
@@ -12,30 +12,31 @@
 	</ul>
 </template>
 
-<script setup>
-import { useTemplate } from '~/stores/template';
-import { storeToRefs } from 'pinia';
-
-const store = useTemplate();
-const { fetchTemplate } = store;
-const { template } = storeToRefs(store);
-
-fetchTemplate();
+<script>
+export default {
+	props: {
+		menuMain: {
+			type: Array,
+			default: () => [],
+		}
+	}
+};
 </script>
 
 <style lang="scss" scoped>
 .header-menu-main {
-	height: 72px;
 	display: flex;
 	gap: 28px;
-	color: $white;
 	@include text(18px, 28px, 700);
 
 	&__link {
 		position: relative;
 		display: flex;
 		align-items: center;
-		height: 100%;
+		height: 72px;
+		color: $white;
+		text-decoration: none;
+
 
 		&::after {
 			position: absolute;
@@ -55,5 +56,16 @@ fetchTemplate();
 			}
 		}
 	}
+}
+
+@media screen and (max-width: 1365px) {
+	.header-menu-main {
+		column-gap: 14px;
+		
+		&__link {
+			height: 64px;
+			font-size: 16px;
+		}
+    }
 }
 </style>

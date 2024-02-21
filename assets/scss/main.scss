@@ -1,13 +1,25 @@
 body {
     font-family: 'PT Root UI', sans-serif;
-	@include text(18px, 28px, 500);
+	@include text(18px, 150%, 500);
+	color: $darkGrey;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+ul {
+	@include reset-list;
 }
 
 .container {
-	max-width: 1170px;
+	max-width: 1448px;
 	width: 100%;
-	margin: 0 auto;
 	padding: 0 16px;
+	margin: 0 auto;
 }
 
 .title-h1 {

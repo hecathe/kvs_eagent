@@ -1,7 +1,7 @@
 <template>
 	<ul class="header-menu-top">
-		<li class="header-menu-top__item" v-for="item in template.menu_header" :key="item.id">
-			<a class="header-menu-top__link" href="#" v-if="item.icon">
+		<li class="header-menu-top__item" v-for="item in menuHeader" :key="item.id">
+			<a class="header-menu-top__link" :href="item.link" v-if="item.icon">
 				<img :src="item.icon" :alt="item.label">
 			</a>
 			<NuxtLink class="header-menu-top__link" v-else :to="item.link">{{ item.label }}</NuxtLink>
@@ -9,15 +9,15 @@
 	</ul>
 </template>
 
-<script setup>
-import { useTemplate } from '~/stores/template';
-import { storeToRefs } from 'pinia';
-
-const store = useTemplate();
-const { fetchTemplate } = store;
-const { template } = storeToRefs(store);
-
-fetchTemplate();
+<script>
+export default {
+    props: {
+        menuHeader: {
+            type: Array,
+            default: () => [],
+        }
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +25,7 @@ fetchTemplate();
 	display: flex;
 	height: 40px;
 	gap: 24px;
+	@include reset-list;
 	@include text(15px, 21px, 500);
 	margin-right: 120px;
 
@@ -33,10 +34,17 @@ fetchTemplate();
 		height: 100%;
 		align-items: center;
 		color: $dark29;
+		text-decoration: none;
 
 		&:hover {
 			color: $grey96;
 		}
 	}
+}
+
+@media screen and (max-width: 1365px) {
+	.header-menu-top {
+        column-gap: 12px;
+    }
 }
 </style>

@@ -35,7 +35,7 @@ export default defineEventHandler((event) => {
 					link: '#',
 				},
 				{
-					icon: '/icons/telegram.svg',
+					icon: '/icons/telegram-black.svg',
 					label: '',
 					link: '#',
 				},
@@ -67,6 +67,30 @@ export default defineEventHandler((event) => {
 					link: '/deals/',
 				},
 			],
+			menu_user: [
+				{
+					icon: '/icons/eagent.svg',
+					label: '',
+					link: '#',
+				},
+				{
+					icon: false,
+					label: {
+						name: 'Контентов Контент',
+						title: 'STAFF KVS',
+					}
+				},
+				{
+					icon: '/icons/user.svg',
+					label: '',
+					link: '#',
+				},
+				{
+					icon: '/icons/logout.svg',
+					label: '',
+					link: '#',
+				},
+			],
 			privacy_policy: {
 				label: 'Политика персональных данных',
 				link: '/politika-konfidentsialnosti/',
@@ -74,14 +98,20 @@ export default defineEventHandler((event) => {
 			},
 			social: [
 				{
-					icon: '',
-					link: '',
+					icon: '/icons/telegram.svg',
+					link: '#',
+				},
+				{
+					icon: '/icons/youtube.svg',
+					link: '#',
 				},
 			],
-			tagline: {
-				additional: 'Строим мир — строим отношения!',
-				main: 'Группа компаний «КВС»',
-			},
+			tagline: [
+				{
+					main: 'Агентский портал «КВС». ',
+					additional: 'Строим мир — строим отношения!',
+				}
+			],
 		},
 	};
 });

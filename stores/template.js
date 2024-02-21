@@ -10,10 +10,9 @@ export const useTemplate = defineStore('template', {
 		},
 	},
 	actions: {
-		fetchTemplate() {
-			$fetch('http://localhost:3000/api/template').then((response) => {
-				this.template = response.template;
-			});
+		async fetchTemplate() {
+			this.temp = await useFetch('http://localhost:3000/api/template');
+			console.log(this.temp);
 		},
 	},
 });
