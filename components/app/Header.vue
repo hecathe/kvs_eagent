@@ -4,9 +4,10 @@
 			<img src="/icons/kvs-logo.svg" alt="logo" />
 		</NuxtLink>
 
-		<AppHeaderMobile v-if="mobile"></AppHeaderMobile>
+		<div class="header__mobile">
+		</div>
 
-		<div class="header__top" v-if="!mobile">
+		<div class="header__top">
 			<div class="header__wrapper">
 				<AppHeaderMenuTop :menu-header="template.menu_header"></AppHeaderMenuTop>
 
@@ -17,7 +18,7 @@
 			</div>
 		</div>
 
-		<div class="header__bottom" v-if="!mobile">
+		<div class="header__bottom">
 			<div class="header__wrapper">
 				<AppHeaderMenuMain :menu-main="template.menu_main"></AppHeaderMenuMain>
 
@@ -28,17 +29,13 @@
 </template>
 
 <script>
+import template from '~/server/api/template';
+
 export default {
 	props: {
 		template: {
 			type: Object,
 			default: {}
-		}
-	},
-
-	data() {
-		return {
-			mobile: false,
 		}
 	},
 
