@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
 	css: ['normalize.css/normalize.css', '~/assets/scss/main.scss'],
 	devtools: { enabled: true },
-	modules: ['@pinia/nuxt'],
+	modules: [
+		'@pinia/nuxt',
+		"@nuxtjs/svg-sprite",
+	],
 	vite: {
 		css: {
 			preprocessorOptions: {

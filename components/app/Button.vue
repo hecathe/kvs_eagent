@@ -1,10 +1,9 @@
 <template>
-	<button class="button" v-if="isButton">
+	<nuxt-link v-if="to" :to="url"></nuxt-link>
+	<button v-else class="button">
 		<slot></slot>
 	</button>
-	<a class="button" v-else>
-		<slot></slot>
-	</a>
+	
 </template>
 
 <script>

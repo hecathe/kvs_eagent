@@ -4,15 +4,5 @@
 
 		<UiButton :is-button="false">Кнопка</UiButton>
 
-		<ul class="list">
-			<li>dsfsdf</li>
-		</ul>
-
 	</div>
 </template>
-
-<style lang="scss" scoped>
-.list {
-	@include reset-list;
-}
-</style>
