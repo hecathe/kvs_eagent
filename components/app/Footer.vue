@@ -2,10 +2,15 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="footer__item">
-				2020, Группа компаний «КВС»
+				{{ template.copyright }}
 			</div>
 			<div class="footer__item">
-				<nuxt-link class="footer__link" to="#">Политика конфиденциальности</nuxt-link>
+				<nuxt-link
+					class="footer__link"
+					v-for="(item, index) in template.privacy_policy"
+					:key="index"
+					:to="item.link"
+				>{{ item.label }}</nuxt-link>
 			</div>
 			<div class="footer__item">
 				<SocialList :social-list="template.social"></SocialList>
@@ -20,7 +25,7 @@ export default {
 		template: {
 			type: Object,
 			default: {}
-		}
+		},
 	},
 };
 </script>

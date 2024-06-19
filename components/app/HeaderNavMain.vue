@@ -1,11 +1,14 @@
 <template>
-	<ul class="header-menu-main">
+	<ul class="header-nav-main">
 		<li
-			class="header-menu-main__item"
+			class="header-nav-main__item"
 			v-for="item in menuMain"
 			:key="item.id"
 		>
-			<NuxtLink class="header-menu-main__link" :to="item.link">
+			<NuxtLink
+				class="header-nav-main__link"
+				:to="item.link"
+			>
 				{{ item.label }}
 			</NuxtLink>
 		</li>
@@ -24,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-menu-main {
+.header-nav-main {
 	display: flex;
 	gap: 28px;
 	@include text(18px, 28px, 700);
@@ -36,7 +39,6 @@ export default {
 		height: 72px;
 		color: $white;
 		text-decoration: none;
-
 
 		&::after {
 			position: absolute;
@@ -58,14 +60,20 @@ export default {
 	}
 }
 
+@media screen and (max-width: 1550px) {
+	.header-nav-main {
+		column-gap: 20px;
+	}
+}
+
 @media screen and (max-width: 1365px) {
-	.header-menu-main {
+	.header-nav-main {
 		column-gap: 14px;
-		
+
 		&__link {
 			height: 64px;
 			font-size: 16px;
 		}
-    }
+	}
 }
 </style>

@@ -1,9 +1,19 @@
 <template>
-	<nuxt-link v-if="to" :to="url"></nuxt-link>
-	<button v-else class="button">
+	<nuxt-link
+		v-if="url"
+		:to="url"
+		class="button"
+	>
+		<slot></slot>
+	</nuxt-link>
+
+	<button
+		v-else
+		class="button"
+	>
 		<slot></slot>
 	</button>
-	
+
 </template>
 
 <script>
@@ -12,6 +22,10 @@ export default {
 		isButton: {
 			type: Boolean,
 			default: true,
+		},
+		url: {
+			type: String,
+			default: '#',
 		},
 	},
 };
@@ -22,6 +36,8 @@ export default {
 	position: relative;
 	max-width: max-content;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	color: $white;
 	background-color: $orange1;
 	border: none;
@@ -34,10 +50,10 @@ export default {
 	&::after {
 		position: absolute;
 		content: '';
-		top: -50%;
-		right: -50%;
-		bottom: -50%;
-		left: -50%;
+		top: -100%;
+		right: -100%;
+		bottom: -100%;
+		left: -100%;
 		background-color: $orange2;
 		opacity: 0.2;
 		transform: translate(-75%, 25%) skew(60deg);

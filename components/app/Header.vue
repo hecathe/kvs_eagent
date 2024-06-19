@@ -1,17 +1,43 @@
 <template>
 	<header class="header">
-		<NuxtLink class="header__logo" to="/">
-			<img src="/icons/kvs-logo.svg" alt="logo" />
+		<NuxtLink
+			class="header__logo"
+			to="/"
+		>
+			<svg-icon name="kvs-logo"></svg-icon>
 		</NuxtLink>
 
 		<div class="header__mobile">
+			<!-- <div class="header__user-info">
+				<span>{{ user }}</span>
+				<span>{{ user }}</span>
+			</div> -->
+			<user-name :user="template.user"></user-name>
+
+			<app-header-nav-user-button
+				:icon="opened ? 'close_md' : 'burger'"
+				@click="opened = !opened"
+			></app-header-nav-user-button>
+		</div>
+
+		<div
+			v-if="opened"
+			class="header__mobile-menu"
+		>
+			<AppHeaderNavUser :list="template.menu_user"></AppHeaderNavUser>
+
 		</div>
 
 		<div class="header__top">
 			<div class="header__wrapper">
-				<AppHeaderMenuTop :menu-header="template.menu_header"></AppHeaderMenuTop>
+				<AppHeaderNavTop :menu-header="template.menu_header">
+				</AppHeaderNavTop>
 
-				<div class="header__slogan" v-for="item in template.tagline" :key="item.id">
+				<div
+					class="header__slogan"
+					v-for="item in template.tagline"
+					:key="item.id"
+				>
 					<span class="text-orange">{{ item.main }}</span>
 					<span>{{ item.additional }}</span>
 				</div>
@@ -20,37 +46,46 @@
 
 		<div class="header__bottom">
 			<div class="header__wrapper">
-				<AppHeaderMenuMain :menu-main="template.menu_main"></AppHeaderMenuMain>
+				<AppHeaderNavMain :menu-main="template.menu_main">
+				</AppHeaderNavMain>
 
-				<AppHeaderMenuUser></AppHeaderMenuUser>
+				<div class="header__user-menu">
+					<div class="header__eagent-logo">
+						<svg-icon
+							name="eagent"
+							width="200"
+							height="39"
+						></svg-icon>
+					</div>
+					<!-- <div class="header__user-info">
+						<span>{{ template.user }}</span>
+						<span>{{ template.user }}</span>
+					</div> -->
+					<user-name :user="template.user"></user-name>
+
+
+					<AppHeaderNavUser :list="template.menu_user"></AppHeaderNavUser>
+				</div>
 			</div>
 		</div>
 	</header>
 </template>
 
 <script>
-import template from '~/server/api/template';
-
 export default {
 	props: {
 		template: {
 			type: Object,
 			default: {}
+		},
+		opened: {
+			type: Boolean,
+			default: false,
 		}
 	},
-
-	mounted() {
-		window.addEventListener('resize', this.onResize);
-		this.onResize();
-	},
-
-	unmounted() {
-		window.removeEventListener('resize', this.onResize);
-	},
-
-	methods: {
-		onResize() {
-			this.mobile = window.innerWidth <= 975;
+	data() {
+		return {
+			user: this.template.user,
 		}
 	},
 };
@@ -59,6 +94,74 @@ export default {
 <style lang="scss" scoped>
 .header {
 	position: relative;
+	white-space: nowrap;
+
+	&__mobile {
+		display: none;
+		column-gap: 20px;
+	}
+
+	&__mobile-menu {
+		position: absolute;
+		width: 100%;
+		height: calc(100vh - 64px);
+		top: 64px;
+		left: 0;
+		min-height: max-content;
+		background-color: $white;
+		z-index: 3;
+	}
+
+	&__burger {
+		position: relative;
+		width: 64px;
+		height: 64px;
+		display: flex;
+		align-items: center;
+		padding: 22px;
+		box-sizing: border-box;
+
+		span {
+			width: 20px;
+			height: 2px;
+			background-color: #ffffff;
+			transition: width 150ms ease-in-out;
+		}
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			height: 2px;
+			background-color: #ffffff;
+			transition: transform 150ms ease-in-out;
+		}
+
+		&::before {
+			width: 20px;
+			top: 24px;
+		}
+
+		&::after {
+			width: 16px;
+			bottom: 24px;
+		}
+
+		&.open {
+			span {
+				width: 0;
+			}
+
+			&::before {
+				transform: rotate(45deg) translate(5px, 5px);
+			}
+
+			&::after {
+				width: 20px;
+				transform: rotate(-45deg) translate(5px, -5px);
+			}
+		}
+	}
 
 	&__logo {
 		position: absolute;
@@ -88,6 +191,26 @@ export default {
 		@include text(15px, 21px, 500);
 		margin-right: 16px;
 	}
+
+	&__user-menu {
+		display: flex;
+		align-items: center;
+		column-gap: 20px;
+	}
+
+	&__user-info {
+		display: grid;
+		row-gap: 4px;
+		justify-items: flex-end;
+		align-content: center;
+		line-height: 120%;
+		text-align: right;
+		color: $white;
+
+		span:last-child {
+			font-size: 12px;
+		}
+	}
 }
 
 @media screen and (max-width: 1699px) {
@@ -98,21 +221,6 @@ export default {
 
 		&__wrapper {
 			margin-left: calc(100vw - 94%);
-		}
-	}
-}
-
-@media screen and (max-width: 975px) {
-	.header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		background-color: $dark29;
-
-		&__logo {
-			position: static;
-			height: 60px;
-			padding: 0 20px;
 		}
 	}
 }
@@ -138,6 +246,33 @@ export default {
 @media screen and (max-width: 1159px) {
 	.header {
 		&__slogan {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 975px) {
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $dark29;
+
+		&__logo {
+			position: static;
+			height: 60px;
+			padding: 0 20px;
+		}
+
+		&__mobile {
+			display: flex;
+		}
+
+		&__top {
+			display: none;
+		}
+
+		&__bottom {
 			display: none;
 		}
 	}

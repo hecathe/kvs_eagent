@@ -1,8 +1,15 @@
 <template>
 	<ul class="social-list">
-		<li class="social-list__item" v-for="socialItem in socialList" :key="socialItem.id">
-			<a class="social-list__link" :href="socialItem.link">
-				<img :src="socialItem.icon" alt="">
+		<li
+			class="social-list__item"
+			v-for="socialItem in socialList"
+			:key="socialItem.id"
+		>
+			<a
+				class="social-list__link"
+				:href="socialItem.link"
+			>
+				<svg-icon :name="socialItem.icon"></svg-icon>
 			</a>
 		</li>
 	</ul>

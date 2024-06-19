@@ -26,7 +26,7 @@ export default {
 		getTemplate() {
 			$fetch('http://localhost:3000/api/template').then((response) => {
 				this.template = response.template;
-				console.log(this.template);
+				console.log(response);
 			});
 		},
 	},

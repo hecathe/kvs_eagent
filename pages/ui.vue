@@ -2,7 +2,7 @@
 	<div>
 		<h1 class="title-h1">Элементы интерфейса</h1>
 
-		<UiButton :is-button="false">Кнопка</UiButton>
+		<AppButton :is-button="false">Кнопка</AppButton>
 
 	</div>
 </template>
