@@ -1,15 +1,15 @@
 const client_manifest = {
-  "_nuxt-link.27d93d20.js": {
+  "_nuxt-link.9646a5df.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "nuxt-link.27d93d20.js",
+    "file": "nuxt-link.9646a5df.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_svg-icon.vue.9d79cf1d.js": {
+  "_svg-icon.vue.3cb075d9.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
@@ -17,17 +17,17 @@ const client_manifest = {
     "dynamicImports": [
       "assets/sprite/gen/icons.svg"
     ],
-    "file": "svg-icon.vue.9d79cf1d.js",
+    "file": "svg-icon.vue.3cb075d9.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_vue.f36acd1f.50e80f18.js": {
+  "_vue.f36acd1f.c6cc42b5.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "vue.f36acd1f.50e80f18.js",
+    "file": "vue.f36acd1f.c6cc42b5.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -38,17 +38,17 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "assets": [
-      "icons.88eecc7c.svg"
+      "icons.e18b29ef.svg"
     ],
-    "file": "icons.60de881c.js",
+    "file": "icons.f1afcffd.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
     "src": "assets/sprite/gen/icons.svg"
   },
-  "icons.88eecc7c.svg": {
-    "file": "icons.88eecc7c.svg",
+  "icons.e18b29ef.svg": {
+    "file": "icons.e18b29ef.svg",
     "resourceType": "image",
     "prefetch": true,
     "mimeType": "image/svg+xml"
@@ -84,10 +84,10 @@ const client_manifest = {
       "telegram-black.3169e363.svg"
     ],
     "css": [],
-    "file": "default.af112157.js",
+    "file": "default.dfdb32a8.js",
     "imports": [
-      "_svg-icon.vue.9d79cf1d.js",
-      "_nuxt-link.27d93d20.js",
+      "_svg-icon.vue.3cb075d9.js",
+      "_nuxt-link.9646a5df.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -124,10 +124,10 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "error-404.c7f00143.js",
+    "file": "error-404.a0477563.js",
     "imports": [
-      "_nuxt-link.27d93d20.js",
-      "_vue.f36acd1f.50e80f18.js",
+      "_nuxt-link.9646a5df.js",
+      "_vue.f36acd1f.c6cc42b5.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -152,9 +152,9 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "error-500.8c11ddb8.js",
+    "file": "error-500.6ef2f118.js",
     "imports": [
-      "_vue.f36acd1f.50e80f18.js",
+      "_vue.f36acd1f.c6cc42b5.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -179,11 +179,11 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "icons-page.100c411c.js",
+    "file": "icons-page.2f6991e9.js",
     "imports": [
-      "_svg-icon.vue.9d79cf1d.js",
+      "_svg-icon.vue.3cb075d9.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_vue.f36acd1f.50e80f18.js"
+      "_vue.f36acd1f.c6cc42b5.js"
     ],
     "isDynamicEntry": true,
     "src": "node_modules/@nuxtjs/svg-sprite/dist/runtime/components/icons-page.vue"
@@ -199,9 +199,9 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "svg-icon.fc1a9dad.js",
+    "file": "svg-icon.6237b44a.js",
     "imports": [
-      "_svg-icon.vue.9d79cf1d.js",
+      "_svg-icon.vue.3cb075d9.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -218,7 +218,7 @@ const client_manifest = {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "entry.3e9e1552.js",
+    "file": "entry.18762bef.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js",
     "_globalCSS": true
@@ -228,7 +228,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "contacts.fb0d9ed6.js",
+    "file": "contacts.3d0eefcd.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -248,11 +248,11 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "index.610d369a.js",
+    "file": "index.38db90ac.js",
     "imports": [
-      "_vue.f36acd1f.50e80f18.js",
+      "_vue.f36acd1f.c6cc42b5.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.27d93d20.js"
+      "_nuxt-link.9646a5df.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/index.vue"
@@ -276,9 +276,9 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "ui.d06f8ccc.js",
+    "file": "ui.1cd87d62.js",
     "imports": [
-      "_nuxt-link.27d93d20.js",
+      "_nuxt-link.9646a5df.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -295,7 +295,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "svg-sprite.ceaac3b5.js",
+    "file": "svg-sprite.44fbd6d7.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],

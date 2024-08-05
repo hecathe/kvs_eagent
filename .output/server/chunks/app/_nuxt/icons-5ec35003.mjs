@@ -14,7 +14,7 @@ import 'vue';
 import 'unhead';
 import '@unhead/shared';
 
-const icons = "" + buildAssetsURL("icons.88eecc7c.svg");
+const icons = "" + buildAssetsURL("icons.e18b29ef.svg");
 
 export { icons as default };
-//# sourceMappingURL=icons-9df5cdd6.mjs.map
+//# sourceMappingURL=icons-5ec35003.mjs.map

@@ -1,4 +1,4 @@
-import _sfc_main$1 from './svg-icon-4f88e639.mjs';
+import _sfc_main$1 from './svg-icon-7be48b83.mjs';
 import { u as useHead } from './index-6a088328.mjs';
 import { ref, computed, mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
@@ -16,8 +16,8 @@ import 'vue-router';
 
 const icons = [
   "icons/burger",
-  "icons/eagent",
   "icons/close-md",
+  "icons/eagent",
   "icons/kvs-logo",
   "icons/logout",
   "icons/online-school-kvs",
@@ -88,4 +88,4 @@ _sfc_main.setup = (props, ctx) => {
 const iconsPage = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-ada2fcf8"]]);
 
 export { iconsPage as default };
-//# sourceMappingURL=icons-page-2017930e.mjs.map
+//# sourceMappingURL=icons-page-288e91a2.mjs.map
