@@ -2,7 +2,7 @@ import { defineComponent, ref, withAsyncContext, watch, mergeProps, useSSRContex
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderAttr } from 'vue/server-renderer';
 
 const sprites = {
-  "icons": () => import('./icons-02c65ff2.mjs').then((r) => r.default || r)
+  "icons": () => import('./icons-9df5cdd6.mjs').then((r) => r.default || r)
 };
 const spriteClass = "";
 const spriteClassPrefix = "";
@@ -88,4 +88,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=svg-icon-17350dcb.mjs.map
+//# sourceMappingURL=svg-icon-4f88e639.mjs.map
