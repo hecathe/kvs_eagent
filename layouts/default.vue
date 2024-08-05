@@ -24,7 +24,7 @@ export default {
 
 	methods: {
 		getTemplate() {
-			$fetch('http://localhost:3000/api/template').then((response) => {
+			$fetch('http://localhost:3000/kvseagent/api/template').then((response) => {
 				this.template = response.template;
 				console.log(response);
 			});

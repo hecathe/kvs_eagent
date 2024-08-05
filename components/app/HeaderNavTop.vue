@@ -28,7 +28,7 @@
 
 		</li>
 		<li class="header-nav-top__item">
-			<nuxt-link to="#" class="header-nav-top__link">
+			<nuxt-link to="https://t.me/eagentkvs" target="_blank" class="header-nav-top__link">
 				<img
 					src="~/assets/sprite/svg/telegram-black.svg"
 					alt=""

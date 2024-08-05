@@ -575,7 +575,7 @@ const _routes = [
     meta: { ...{}, ...{ "layout": "svg-sprite" } },
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/icons-page-e155e5aa.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/icons-page-801ec7cc.mjs').then((m) => m.default || m)
   },
   {
     name: "contacts",
@@ -908,7 +908,7 @@ const revive_payload_server_eJ33V7gbc6 = /* @__PURE__ */ defineNuxtPlugin({
     }
   }
 });
-const LazySvgIcon = defineAsyncComponent(() => import('./_nuxt/svg-icon-17467377.mjs').then((r) => r.default));
+const LazySvgIcon = defineAsyncComponent(() => import('./_nuxt/svg-icon-256de3ee.mjs').then((r) => r.default));
 const lazyGlobalComponents = [
   ["SvgIcon", LazySvgIcon]
 ];
@@ -936,7 +936,7 @@ const _wrapIf = (component, props, slots) => {
   } };
 };
 const layouts = {
-  default: () => import('./_nuxt/default-4f655e16.mjs').then((m) => m.default || m),
+  default: () => import('./_nuxt/default-f66768bb.mjs').then((m) => m.default || m),
   "svg-sprite": () => import('./_nuxt/svg-sprite-e6577852.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = /* @__PURE__ */ defineComponent({
