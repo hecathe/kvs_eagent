@@ -5,11 +5,8 @@
 			v-for="(item, index) in list"
 			:key="index"
 		>
-			<app-header-nav-user-button
-				:url="item.link"
-				:icon="item.icon"
-				:orange="item.orange"
-			></app-header-nav-user-button>
+		<!-- <span>{{ item }}</span> -->
+			<app-header-nav-user-button :button="item"></app-header-nav-user-button>
 		</li>
 	</ul>
 </template>
@@ -107,6 +104,14 @@ export default {
 	.header-nav-user {
 		&__img {
 			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 975px) {
+	.header-nav-user {
+		&__item {
+			flex: 1;
 		}
 	}
 }

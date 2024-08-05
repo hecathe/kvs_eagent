@@ -19,7 +19,7 @@
 			>{{ item.label }}</NuxtLink>
 		</li>
 		<li class="header-nav-top__item">
-			<nuxt-link to="#">
+			<nuxt-link to="#" class="header-nav-top__link">
 				<img
 					src="~/assets/sprite/svg/online-school-kvs.svg"
 					alt=""
@@ -28,7 +28,7 @@
 
 		</li>
 		<li class="header-nav-top__item">
-			<nuxt-link to="#">
+			<nuxt-link to="#" class="header-nav-top__link">
 				<img
 					src="~/assets/sprite/svg/telegram-black.svg"
 					alt=""
@@ -53,7 +53,6 @@ export default {
 .header-nav-top {
 	display: flex;
 	align-items: center;
-	height: 40px;
 	gap: 24px;
 	@include reset-list;
 	@include text(15px, 21px, 500);
@@ -75,6 +74,22 @@ export default {
 @media screen and (max-width: 1365px) {
 	.header-nav-top {
 		column-gap: 12px;
+	}
+}
+
+@media screen and (max-width: 975px) {
+	.header-nav-top {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		margin-right: 0;
+
+		&__link {
+			height: 64px;
+			font-size: 16px;
+			font-weight: 700;
+			border-top: 1px solid #DCDFE1;
+		}
 	}
 }
 </style>

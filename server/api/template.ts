@@ -60,11 +60,14 @@ export default defineEventHandler((event) => {
 				{
 					icon: 'user',
 					link: '#',
+					title: 'Личный кабинет',
 					orange: true,
 				},
 				{
 					icon: 'logout',
 					link: '#',
+					title: 'Выйти',
+					orange: false,
 				},
 			],
 			user: [

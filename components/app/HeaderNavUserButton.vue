@@ -1,44 +1,28 @@
 <template>
 	<nuxt-link
-		v-if="url"
 		class="user-button"
-		:class="{ 'user-button_orange': orange }"
-		:to="url"
+		:class="{ 'user-button_orange': button.orange }"
+		:to="button.link"
 	>
 		<svg-icon
-			:name="icon"
+			:name="button.icon"
 			width="24"
 			height="24"
 		></svg-icon>
+		<span class="user-button__title">{{ button.title }}</span>
 	</nuxt-link>
-
-	<button
-		v-else
-		class="user-button"
-		:class="{ 'user-button_orange': orange }"
-	>
-		<svg-icon
-			:name="icon"
-			width="24"
-			height="24"
-		></svg-icon>
-	</button>
 </template>
 
 <script>
 export default {
 	props: {
-		url: {
-			type: String,
-			default: '',
+		button: {
+			type: Object,
+			default: () => {},
 		},
 		icon: {
 			type: String,
-			default: '',
-		},
-		orange: {
-			type: Boolean,
-			default: false,
+			default: ''
 		}
 	}
 }
@@ -47,10 +31,12 @@ export default {
 <style lang="scss" scoped>
 .user-button {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 72px;
 	height: 72px;
+	color: $dark29;
 	border-left: 1px solid #40464d;
 	cursor: pointer;
 
@@ -58,8 +44,13 @@ export default {
 		background-color: #40464d;
 	}
 
+	&__title {
+		display: none;
+	}
+
 	&_orange {
 		position: relative;
+		color: $white;
 		background-color: $orange1;
 		border: none;
 		overflow: hidden;
@@ -88,16 +79,29 @@ export default {
 			opacity: 1;
 		}
 	}
-
-	svg {
-		--currentColor: #{$white};
-	}
 }
 
 @media screen and (max-width: 975px) {
 	.user-button {
-		width: 64px;
-		height: 64px;
+		row-gap: 10px;
+		width: 100%;
+		height: 100%;
+		border: none;
+		padding: 8px 0;
+
+		&__title {
+			display: inline;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		&:not(.user-button_orange) {
+			background: none;
+
+			svg {
+				--currentColor: #{$dark29};
+			}
+		}
 	}
 }
 </style>

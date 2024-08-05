@@ -8,30 +8,39 @@
 		</NuxtLink>
 
 		<div class="header__mobile">
-			<!-- <div class="header__user-info">
-				<span>{{ user }}</span>
-				<span>{{ user }}</span>
-			</div> -->
 			<user-name :user="template.user"></user-name>
 
-			<app-header-nav-user-button
-				:icon="opened ? 'close_md' : 'burger'"
+			<button
+				class="header__burger"
 				@click="opened = !opened"
-			></app-header-nav-user-button>
+				:class="{ open: opened }"
+			>
+				<span></span>
+			</button>
 		</div>
 
 		<div
 			v-if="opened"
-			class="header__mobile-menu"
+			class="header__mobile-menu mobile-menu"
 		>
 			<AppHeaderNavUser :list="template.menu_user"></AppHeaderNavUser>
-
+			<div
+				class="header__slogan"
+				v-for="item in template.tagline"
+				:key="item.id"
+			>
+				<span class="text-orange">{{ item.main }}</span>
+				<span>{{ item.additional }}</span>
+			</div>
+			<div class="mobile-menu__list">
+				<AppHeaderNavMain :menu-main="template.menu_main"></AppHeaderNavMain>
+				<AppHeaderNavTop :menu-header="template.menu_header"></AppHeaderNavTop>
+			</div>
 		</div>
 
 		<div class="header__top">
 			<div class="header__wrapper">
-				<AppHeaderNavTop :menu-header="template.menu_header">
-				</AppHeaderNavTop>
+				<AppHeaderNavTop :menu-header="template.menu_header"></AppHeaderNavTop>
 
 				<div
 					class="header__slogan"
@@ -46,8 +55,7 @@
 
 		<div class="header__bottom">
 			<div class="header__wrapper">
-				<AppHeaderNavMain :menu-main="template.menu_main">
-				</AppHeaderNavMain>
+				<AppHeaderNavMain :menu-main="template.menu_main"></AppHeaderNavMain>
 
 				<div class="header__user-menu">
 					<div class="header__eagent-logo">
@@ -57,10 +65,6 @@
 							height="39"
 						></svg-icon>
 					</div>
-					<!-- <div class="header__user-info">
-						<span>{{ template.user }}</span>
-						<span>{{ template.user }}</span>
-					</div> -->
 					<user-name :user="template.user"></user-name>
 
 
@@ -94,7 +98,7 @@ export default {
 <style lang="scss" scoped>
 .header {
 	position: relative;
-	white-space: nowrap;
+	// white-space: nowrap;
 
 	&__mobile {
 		display: none;
@@ -102,6 +106,9 @@ export default {
 	}
 
 	&__mobile-menu {
+		display: flex;
+		flex-direction: column;
+		row-gap: 30px;
 		position: absolute;
 		width: 100%;
 		height: calc(100vh - 64px);
@@ -109,6 +116,7 @@ export default {
 		left: 0;
 		min-height: max-content;
 		background-color: $white;
+		padding: 30px 16px;
 		z-index: 3;
 	}
 
@@ -120,6 +128,7 @@ export default {
 		align-items: center;
 		padding: 22px;
 		box-sizing: border-box;
+		border-left: 1px solid #40464D;
 
 		span {
 			width: 20px;
@@ -180,6 +189,10 @@ export default {
 		padding-left: 16px;
 	}
 
+	&__top {
+		padding: 5px 0;
+	}
+
 	&__bottom {
 		color: $white;
 		background-color: $dark29;
@@ -232,6 +245,10 @@ export default {
 				display: none;
 			}
 		}
+
+		&__eagent-logo {
+			display: none;
+		}
 	}
 }
 
@@ -266,6 +283,16 @@ export default {
 
 		&__mobile {
 			display: flex;
+		}
+
+		&__mobile-menu {
+			.header__slogan {
+				display: inline-block
+			}
+
+			.header__slogan span[data-v-d5d17c1d]:not(:first-child) {
+				display: inline-block;
+			}
 		}
 
 		&__top {

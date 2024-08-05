@@ -1,11 +1,7 @@
 <template>
-	<div
-		class="user-name"
-		v-for="(key, index) in user"
-		:key="index"
-	>
-		<span>{{ key.name }}</span>
-		<span>{{ key.title }}</span>
+	<div class="user-name">
+		<span>{{ user.name }}</span>
+		<span>{{ user.title }}</span>
 	</div>
 </template>
 

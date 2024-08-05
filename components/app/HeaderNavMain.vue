@@ -76,4 +76,16 @@ export default {
 		}
 	}
 }
+
+@media screen and (max-width: 975px) {
+	.header-nav-main {
+		flex-direction: column;
+		gap: 0;
+
+		&__link {
+			color: $dark29;
+			border-top: 1px solid #DCDFE1;
+		}
+	}
+}
 </style>
