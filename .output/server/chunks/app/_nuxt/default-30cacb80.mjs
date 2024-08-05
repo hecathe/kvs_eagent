@@ -1,6 +1,6 @@
 import { b as buildAssetsURL } from '../../handlers/renderer.mjs';
 import { _ as __nuxt_component_0$2 } from './nuxt-link-01469011.mjs';
-import _sfc_main$9 from './svg-icon-7be48b83.mjs';
+import _sfc_main$9 from './svg-icon-0de4ad18.mjs';
 import { useSSRContext, mergeProps, withCtx, createVNode, createTextVNode, toDisplayString } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot, ssrRenderClass, ssrRenderList, ssrInterpolate, ssrRenderAttr } from 'vue/server-renderer';
 import { _ as _export_sfc } from '../server.mjs';
@@ -459,4 +459,4 @@ _sfc_main.setup = (props, ctx) => {
 const _default = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 export { _default as default };
-//# sourceMappingURL=default-b64a4ce0.mjs.map
+//# sourceMappingURL=default-30cacb80.mjs.map
